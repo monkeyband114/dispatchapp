@@ -1,0 +1,13 @@
+{
+  "vendors": [
+    {
+      "id": "0d61ab4e-e195-41b5-886a-1ae64b1f5416",
+      "name": "Rosco Jenkins",
+      "email": "mike@gmail.com",
+      "password": "$2b$10$Wzkttfb.nY4jN21N8124veuRAl3VzUpIFPsEW63wpn0XYdAzk.EDe"
+    }
+  ],
+  "riders": [],
+  "orders": [],
+  "riderStatus": []
+}
