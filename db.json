@@ -1,5 +1,84 @@
 {
-  "vendors": [],
-  "riders": [],
-  "orders": []
+  "vendors": [
+    {
+      "id": "7cc6cc49-eafa-4de1-8def-fadc3d6bc34c",
+      "name": "danny bitch",
+      "email": "awanibitch@gmail",
+      "password": "$2b$10$ZoXVrp7Ki7IQu6TCafq09us7EmeeIfYY66Qj29gUBUaG2MPyHhaO2"
+    },
+    {
+      "id": "939ff60c-c26e-46b5-8e86-a785c2d2e8f8",
+      "name": "jonny west",
+      "email": "west@gmail.com",
+      "password": "$2b$10$7RAl6tyitEoIJMN5Lhml5OzKZX2ZPn6ocu6CnuKBLLFODtQKM9f86"
+    }
+  ],
+  "riders": [
+    {
+      "id": "5a5d6939-e9cb-4041-8cb3-65db456648ca",
+      "name": "Michael Adawaren",
+      "email": "adawaren@gmail.com",
+      "password": "$2b$10$E0HR251bwdwFnhKR/bNZaemHeoganeVUGcaDyT5na3MnqFzv2l.Bm",
+      "available": true,
+      "location": {
+        "latitude": 6.5765376,
+        "longitude": 3.3488896
+      }
+    }
+  ],
+  "orders": [
+    {
+      "id": "f51b2fe3-74fe-4364-972a-f4bd414504f0",
+      "vendorId": "7cc6cc49-eafa-4de1-8def-fadc3d6bc34c",
+      "pickup": "Warri North, Delta, Nigeria",
+      "delivery": "Koko, Ogun, Nigeria",
+      "recipient": {
+        "name": "REMORE DEZERI",
+        "phone": "+2343784947556"
+      },
+      "package": {
+        "description": "bigshshj",
+        "weightKg": 7
+      },
+      "status": "assigned",
+      "pickupCoords": {
+        "lat": 6.002133,
+        "lng": 5.466213
+      },
+      "deliveryCoords": {
+        "lat": 6.716522,
+        "lng": 2.793702
+      },
+      "assignedRider": "5a5d6939-e9cb-4041-8cb3-65db456648ca",
+      "riderLocation": {
+        "latitude": 6.5765376,
+        "longitude": 3.3488896
+      }
+    },
+    {
+      "id": "a1f149f6-4fba-4083-9352-a6a6891f8bd6",
+      "vendorId": "7cc6cc49-eafa-4de1-8def-fadc3d6bc34c",
+      "pickup": "Warri North, Delta, Nigeria",
+      "delivery": "Ughelli South, Delta, Nigeria",
+      "recipient": {
+        "name": "Johnson",
+        "phone": "+234597292702"
+      },
+      "package": {
+        "description": "gajkhigauha",
+        "weightKg": 55.8
+      },
+      "status": "pending",
+      "pickupCoords": {
+        "lat": 6.002133,
+        "lng": 5.466213
+      },
+      "deliveryCoords": {
+        "lat": 5.550611,
+        "lng": 5.830471
+      },
+      "assignedRider": null,
+      "riderLocation": null
+    }
+  ]
 }

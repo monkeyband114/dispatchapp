@@ -3,11 +3,17 @@ const { readData, writeData } = require("../services/dbService");
 const { geocode } = require("../services/mapboxService");
 
 exports.createOrder = async (req, res) => {
-  const { vendorId, pickup, delivery, recipient, package } = req.body;
+  const {
+    vendorId,
+    pickupCoords,
+    deliveryCoords,
+    pickup,
+    delivery,
+    recipient,
+    package,
+  } = req.body;
   const data = readData();
 
-  const pickupCoords = await geocode(pickup);
-  const deliveryCoords = await geocode(delivery);
   if (!pickupCoords || !deliveryCoords)
     return res.status(400).json({ error: "Invalid addresses." });
 
@@ -77,4 +83,26 @@ exports.getRiderLocation = (req, res) => {
   if (!order) return res.status(404).json({ error: "Order not found." });
 
   res.status(200).json({ location: order.riderLocation });
+};
+
+exports.getAvaliableOrders = (req, res) => {
+  const data = readData();
+  const availableOrders = data.orders.filter(
+    (order) => order.status === "pending" && !order.assignedRider,
+  );
+  res.json(availableOrders);
+};
+
+exports.getOrdersByRiderId = (req, res) => {
+  const { riderId } = req.params;
+  const data = readData();
+  const riderOrders = data.orders.filter(
+    (order) => order.assignedRider === riderId,
+  );
+
+  if (riderOrders.length === 0) {
+    return res.status(404).json({ message: "No orders found for this rider." });
+  }
+
+  res.json(riderOrders);
 };

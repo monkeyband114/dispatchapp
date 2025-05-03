@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   updateAvailability,
   getAvailableRiders,
+  getOrdersByRiderId,
 } = require("../controllers/riderController");
 const { validateAvailabilityUpdate } = require("../utils/validation");
 

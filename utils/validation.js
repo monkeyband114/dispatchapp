@@ -2,13 +2,6 @@ function validateRegistration(req, res, next) {
   const { name, email, password, type } = req.body;
   if (!name || !email || !password || !type)
     return res.status(400).json({ error: "All fields are required." });
-
-  if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email))
-    return res.status(400).json({ error: "Invalid email format." });
-
-  if (!["vendor", "rider"].includes(type))
-    return res.status(400).json({ error: "Type must be 'vendor' or 'rider'." });
-
   next();
 }
 
@@ -20,8 +13,26 @@ function validateLogin(req, res, next) {
 }
 
 function validateOrderCreation(req, res, next) {
-  const { vendorId, pickup, delivery, recipient, package: pkg } = req.body;
-  if (!vendorId || !pickup || !delivery || !recipient || !pkg)
+  console.log(req.body);
+  const {
+    vendorId,
+    pickupCoords,
+    deliveryCoords,
+    pickup,
+    delivery,
+    recipient,
+    package: pkg,
+  } = req.body;
+
+  if (
+    !vendorId ||
+    !pickup ||
+    !delivery ||
+    !pickupCoords ||
+    !deliveryCoords ||
+    !recipient ||
+    !pkg
+  )
     return res.status(400).json({ error: "All order fields are required." });
   next();
 }

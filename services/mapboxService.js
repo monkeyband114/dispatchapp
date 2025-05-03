@@ -1,4 +1,5 @@
 const axios = require("axios");
+const { response } = require("express");
 const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
 
 async function geocode(address) {
@@ -9,5 +10,5 @@ async function geocode(address) {
   const coords = response.data.features[0]?.geometry.coordinates;
   return coords || null;
 }
-
+console.log("location is:", response);
 module.exports = { geocode };

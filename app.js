@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: "*", // Or specify domains e.g., ['http://localhost:3000']
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type"],
     credentials: true,
   }),
 );
@@ -21,5 +21,5 @@ app.use("/api/auth", authRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/riders", riderRoutes);
 
-const PORT = 3000;
+const PORT = 7000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

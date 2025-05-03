@@ -6,6 +6,8 @@ const {
   acceptOrder,
   updateRiderLocation,
   getRiderLocation,
+  getAvaliableOrders,
+  getOrdersByRiderId,
 } = require("../controllers/orderController");
 
 const {
@@ -19,5 +21,6 @@ router.get("/vendor/:vendorId", getVendorOrders);
 router.post("/accept", validateOrderAcceptance, acceptOrder);
 router.post("/location/update", validateLocationUpdate, updateRiderLocation);
 router.get("/location/:orderId", getRiderLocation);
-
+router.get("/available", getAvaliableOrders);
+router.get("/rider/:riderId", getOrdersByRiderId);
 module.exports = router;
