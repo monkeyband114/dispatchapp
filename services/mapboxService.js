@@ -11,4 +11,4 @@ async function geocode(address) {
   return coords || null;
 }
 console.log("location is:", response);
-module.exports = { geocode };
+module.exports = { geocode }; // rice
